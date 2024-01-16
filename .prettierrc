@@ -1,0 +1,10 @@
+{
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "endOfLine": "auto",
+  "printWidth": 120,
+  "semi": false,
+  "bracketSpacing": true,
+  "parser": "flow",
+  "files.eol": "\r\n"
+}
