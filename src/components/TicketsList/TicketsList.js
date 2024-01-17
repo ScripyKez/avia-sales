@@ -10,7 +10,7 @@ import classes from './TicketsList.module.scss'
 export default function TicketsList() {
   const tickets = useSelector((state) => state.ticketList)
   const filters = useSelector((state) => state.transferFilterList)
-  const { completeLoading, error, ticketList, token, filteredList } = tickets
+  const { completeLoading, error, ticketList, token, filteredList, sortParam } = tickets
   const dispatch = useDispatch()
 
   const [listLength, setListLength] = useState(4)
@@ -24,7 +24,7 @@ export default function TicketsList() {
   useEffect(() => {
     if (!completeLoading && token) {
       dispatch(fetchTickets(token))
-      dispatch(ticketSort('самый дешевый'))
+      dispatch(ticketSort(sortParam))
       dispatch(ticketFilter(filters))
     }
   }, [token, dispatch, ticketList, completeLoading, error])
