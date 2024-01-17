@@ -22,9 +22,9 @@ export default function TicketsList() {
   }, [dispatch, token])
 
   useEffect(() => {
+    dispatch(ticketSort(sortParam))
     if (!completeLoading && token) {
       dispatch(fetchTickets(token))
-      dispatch(ticketSort(sortParam))
       dispatch(ticketFilter(filters))
     }
   }, [token, dispatch, ticketList, completeLoading, error])
